@@ -1,0 +1,215 @@
+
+
+  @font-face {
+    font-family: 'Crozet';
+    src: url('fonts/crozet_te/webfonts/Crozet-Regular.woff') format('woff'); /* Adjust the path if needed */
+    font-weight: normal; /* Adjust if the font has different weights */
+    font-style: normal; /* Adjust if the font has different styles */
+}
+
+@font-face {
+    font-family: 'FT88';
+    src: url('fonts/crozet_te/FT88-Serif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body, html {
+    margin: 0;
+    align-content: center;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    
+    font-family: 'Crozet', sans-serif;
+  }
+  
+  #container {
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    background-color: #1A4431;
+     /* Change background color to your preference */
+  }
+
+  #info{
+    z-index: 1000;
+    position: absolute;
+    top: 25%;
+    left: 23%;
+    padding: 2%;
+    align-items: center;
+    width: 50%; /* Width of the rectangle */
+    height: 40%; 
+    overflow: scroll;
+   
+    background-color: rgba(69, 114, 181, 0.8);
+    /* Height of the rectangle *//* Pink background */
+    box-shadow: 0px 0px 40px 40px rgba(69, 114, 181, 1); /* Blurry pink shadow */
+    border-radius: 10px; 
+    transition: background-color 0.5s ease; 
+    transition: height 2s ease;
+    transition: top 2s ease;/* Transition for smooth fade */
+        }
+
+        h1{
+            color: #E0B7EF;
+            position: relative;
+            top: 1%;
+            left: 7%;
+            align-self: center;
+            font-size: 400%;
+            transition: transform 0.5s ease;
+          }
+
+        #pretty{
+            position: relative;
+            color: #E0B7EF;
+            font-size: 200%;
+        }
+
+          #allInfo{
+            display: none;
+            transition: transform 0.5s ease;
+          }
+
+        #info:hover {
+            background-color: rgba(69, 114, 181, 1);
+            height: 70%;
+            top: 10%;
+        }
+
+        #info:hover h1{
+            transform: scale(0.8);
+        }
+
+        #info:hover #allInfo{
+            display: block;
+        }
+
+        
+
+  .wingding {
+    position: absolute;
+    font-family: "Wingdings", sans-serif;
+    color: #E0B7EF;
+    font-size: 60px; /* Adjust size if necessary */
+  }
+
+
+  .accordion-container {
+    font-family: 'FT88', sans-serif;
+    display: flex; /* Arrange items horizontally */
+    justify-content: space-between; /* Space between items */
+    width: 100%; /* Container width */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.accordion-item {
+    /* Border for items */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow content */
+    /* Background color */
+    transition: box-shadow 0.3s ease; /* Transition for box shadow */
+    margin-bottom: 10px; /* Space between items */
+}
+
+
+
+.accordion-header {
+    padding: 5px; /* Padding for header */
+    cursor: pointer; /* Change cursor to pointer */
+     /* Header background color */
+    color: #E0B7EF; /* Header text color */
+    font-size: 18px; /* Header font size */
+    text-align: center; /* Center text */
+}
+
+.accordion-header:hover{
+    color: #1A4431;
+}
+
+.accordion-content {
+    display: none; /* Initially hidden */
+    padding: 15px; 
+   
+    color: rgba(69, 114, 181, 1);/* Padding for content */
+    background-color: #E0B7EF; /* Content background color */
+}
+
+.active .accordion-content {
+    display: block; /* Show content when active */
+}
+h2{
+    display: none;
+}
+@media only screen and (max-width: 767px) {
+
+    h2{
+        width: 100%; /* Ensure it takes up the full width of the container */
+    word-wrap: break-word; /* Ensure long words break to wrap */
+    overflow-wrap: break-word; /* Additional rule to handle wrapping for long words */
+    word-break: break-word; /* Break long words */
+    white-space: normal; /* Prevent text from being on a single line */
+    text-align: center;
+        z-index: 1;
+        text-align: center;
+        display: block;
+        color: #E0B7EF;
+        position: absolute;
+       
+        align-self: center;
+        font-size: 625%;
+        transition: transform 0.5s ease;
+    }
+
+    h1{
+       display: none;
+    }
+
+    #info{
+        z-index: 1000;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        padding: 2%;
+        align-items: center;
+        width: 50%; /* Width of the rectangle */
+        height: 20%; 
+        overflow: scroll;
+       
+        background-color: rgba(69, 114, 181, 0.8);
+        /* Height of the rectangle *//* Pink background */
+        box-shadow: 0px 0px 40px 40px rgba(69, 114, 181, 1); /* Blurry pink shadow */
+        border-radius: 10px; 
+        transition: background-color 0.5s ease; 
+        transition: height 2s ease;
+        transition: top 2s ease;
+        transition: width 2s ease;
+        transition: left 2s ease;/* Transition for smooth fade */
+            }
+
+            #info:hover {
+                height: 60%;
+                width: 90%;
+                left: 3%;
+            top: 15%;
+            }
+
+            #info:hover h2 {
+                display: none;
+               
+            }
+            .accordion-header {
+                padding: 5px; /* Padding for header */
+                cursor: pointer; /* Change cursor to pointer */
+                 /* Header background color */
+                color: #E0B7EF; /* Header text color */
+                font-size: 15px; /* Header font size */
+                text-align: center; /* Center text */
+            }
+
+}
