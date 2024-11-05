@@ -70,27 +70,169 @@ setInterval(createWingding, 500);
 
 const headers = document.querySelectorAll('.accordion-header');
         const items = document.querySelectorAll('.accordion-item');
-
+/*
         headers.forEach(header => {
-            header.addEventListener('click', () => {
-                // Close all accordion items
-                items.forEach(item => {
-                    item.classList.remove('active');
-                });
-                // Open clicked item
-                const parent = header.parentElement;
-                parent.classList.toggle('active');
-            });
+          header.addEventListener('click', () => {
+              const parent = header.parentElement;
+              
+              // Check if the clicked item is already active
+              const isActive = parent.classList.contains('active');
+              
+              // Close all accordion items
+              items.forEach(item => {
+                  item.classList.remove('active');
+              });
+              
+              // Toggle the clicked item based on its current state
+              if (!isActive) {
+                  parent.classList.add('active');
+              }
+          });
+      });*/
+
+      headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const parent = header.parentElement;
+            
+            // Check if the clicked item is already active
+            const isActive = parent.classList.contains('active');
+            
+            // Close all accordion items
+            items.forEach(item => item.classList.remove('active'));
+            
+            // Toggle the clicked item based on its current state
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+            
+            // Trigger explosion effect on header
+            createExplosion(header);
+        });
+    });
+    
+   /* function createExplosion(element) {
+      const explosionCount = 40; // Number of wingdings per explosion
+      const wingdings = ['✿', '✸', '✪', '✦', '✱', '❄️', '✤', '✧', '✹', '✶']; // Use your desired characters
+      
+      for (let i = 0; i < explosionCount; i++) {
+          const wingding = document.createElement('span');
+          wingding.classList.add('explosion');
+          wingding.textContent = wingdings[Math.floor(Math.random() * wingdings.length)];
+          
+          // Set random direction for each wingding
+          const randomX = (Math.random() - 0.5) * 2; // Random value between -1 and 1
+          const randomY = (Math.random() - 0.5) * 2;
+          
+          wingding.style.setProperty('--x', randomX);
+          wingding.style.setProperty('--y', randomY);
+          
+          // Position the explosion element at the header's location
+          const rect = element.getBoundingClientRect();
+          wingding.style.left = `${rect.left + rect.width / 2}px`;
+          wingding.style.top = `${rect.top + rect.height / 2}px`;
+          
+          document.body.appendChild(wingding);
+          
+          // Remove element after animation ends
+          wingding.addEventListener('animationend', () => {
+              wingding.remove();
+          });
+      }
+  }*/
+
+/*  function createExplosion(element) {
+    const explosionCount = 10; // Number of wingdings per float
+    const wingdings = ['✿', '✦', '✱', '✧', '✶']; // Choose characters
+
+    // Get the #info container and ensure it has `position: relative;`
+    const container = document.getElementById('info');
+    container.style.position = 'relative';
+
+    const wingdingElements = [];
+
+    for (let i = 0; i < explosionCount; i++) {
+        const wingding = document.createElement('span');
+        wingding.classList.add('explosion');
+        wingding.textContent = wingdings[Math.floor(Math.random() * wingdings.length)];
+
+        // Position each wingding randomly within the header's area
+        const rect = element.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        
+        wingding.style.left = `${rect.left - containerRect.left + Math.random() * rect.width}px`;
+        wingding.style.top = `${rect.top - containerRect.top}px`;
+
+        container.appendChild(wingding);
+        wingdingElements.push({
+            element: wingding,
+            velocityY: Math.random() * 1 + 1, // Initial downward velocity
+            velocityX: (Math.random() - 0.5) * 2, // Slight random horizontal movement
+            height: wingding.offsetHeight,
+            width: wingding.offsetWidth,
+        });
+    }
+
+    // Function to check for overlap between wingdings
+    function isOverlapping(wingdingA, wingdingB) {
+        const rectA = wingdingA.element.getBoundingClientRect();
+        const rectB = wingdingB.element.getBoundingClientRect();
+
+        return !(
+            rectA.right < rectB.left ||
+            rectA.left > rectB.right ||
+            rectA.bottom < rectB.top ||
+            rectA.top > rectB.bottom
+        );
+    }
+
+    // Animation loop
+    function animateWingdings() {
+        wingdingElements.forEach(wingdingObj => {
+            const wingding = wingdingObj.element;
+            let rect = wingding.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+
+            // Apply gravity effect
+            wingdingObj.velocityY += 0.1; // Increase downward speed over time (gravity)
+            let newTop = rect.top + wingdingObj.velocityY;
+            let newLeft = rect.left + wingdingObj.velocityX;
+
+            // Check for collision with the bottom of the container
+            if (newTop + wingding.offsetHeight >= containerRect.bottom) {
+                newTop = containerRect.bottom - wingding.offsetHeight;
+                wingdingObj.velocityY *= -0.5; // Bounce effect with reduced speed
+            }
+
+            // Check for overlap with other wingdings
+            for (const otherWingding of wingdingElements) {
+                if (otherWingding !== wingdingObj && isOverlapping(wingdingObj, otherWingding)) {
+                    // Adjust position if overlapping
+                    newTop = rect.top; // Reset to previous position
+                    wingdingObj.velocityY = 0; // Stop moving down to prevent overlap
+                }
+            }
+
+            // Check for collision with the sides of the container
+            if (newLeft <= containerRect.left || newLeft + wingding.offsetWidth >= containerRect.right) {
+                wingdingObj.velocityX *= -0.5; // Reverse horizontal direction on collision
+            }
+
+            // Set new position
+            wingding.style.top = `${newTop - containerRect.top}px`;
+            wingding.style.left = `${newLeft - containerRect.left}px`;
+
+            // Reduce bounce velocity to "settle" at the bottom
+            if (Math.abs(wingdingObj.velocityY) < 0.1) {
+                wingdingObj.velocityY = 0;
+            }
         });
 
-        const infoDiv = document.getElementById('info');
-        const outsideHeading = document.getElementById('outside-heading');
-    
-        // Add event listener for hover (mouseenter and mouseleave)
-        infoDiv.addEventListener('mouseenter', () => {
-            outsideHeading.style.display = 'none'; // Hide h2 when hovering over #info
-        });
-    
-        infoDiv.addEventListener('mouseleave', () => {
-            outsideHeading.style.display = 'block'; // Show h2 when not hovering
-        });
+        // Continue the animation until all wingdings settle
+        if (wingdingElements.some(w => w.velocityY !== 0)) {
+            requestAnimationFrame(animateWingdings);
+        }
+    }
+
+    animateWingdings(); // Start the animation loop
+}
+*/
