@@ -14,7 +14,17 @@
     font-style: normal;
 }
 
+a{
+    text-decoration: none;
+}
 
+
+
+.slay{
+    color: #1A4431;
+    font-family: 'FT88', sans-serif;
+    position: relative;
+}
 
 body, html {
     margin: 0;
@@ -146,11 +156,18 @@ body, html {
     display: block; /* Show content when active */
 }
 h2{
+    font-family: 'Crozet', sans-serif;
+    display: block;
+}
+
+#rawr{
     display: none;
 }
+
 @media only screen and (max-width: 767px) {
 
-    h2{
+    #rawr {
+        top: 2%;
         width: 100%; /* Ensure it takes up the full width of the container */
     word-wrap: break-word; /* Ensure long words break to wrap */
     overflow-wrap: break-word; /* Additional rule to handle wrapping for long words */
@@ -167,6 +184,7 @@ h2{
         font-size: 625%;
         transition: transform 0.5s ease;
     }
+
 
     h1{
        display: none;
