@@ -13,6 +13,23 @@
     font-weight: normal;
     font-style: normal;
 }
+.almendra-regular {
+    font-family: "Almendra", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .almendra-bold {
+    font-family: "Almendra", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .almendra-regular-italic {
+    font-family: "Almendra", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
 
 a{
     text-decoration: none;
@@ -25,6 +42,12 @@ a{
     font-family: 'FT88', sans-serif;
     position: relative;
 }
+@font-face {
+    font-family: 'Fantome-Regular';
+    src: url('fonts/Fantome-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body, html {
     margin: 0;
@@ -33,7 +56,7 @@ body, html {
     overflow: hidden;
     height: 100%;
     
-    font-family: 'Crozet', sans-serif;
+    font-family: "Almendra", serif;
   }
   
   #container {
@@ -43,7 +66,8 @@ body, html {
     width: 100%;
     height: 100vh;
     pointer-events: none;
-    background-color: #1A4431;
+    background-image: url(giphy.gif);
+    background-size: cover;
      /* Change background color to your preference */
   }
 
@@ -55,7 +79,7 @@ body, html {
     padding: 2%;
     align-items: center;
     width: 50%; /* Width of the rectangle */
-    height: 40%; 
+    height: 50%; 
     overflow: scroll;
    
     background-color: rgba(69, 114, 181, 0.8);
@@ -68,12 +92,13 @@ body, html {
         }
 
         h1{
+            font-family: 'Fantome-Regular', Arial, sans-serif;
             color: #E0B7EF;
             position: relative;
-            top: 1%;
-            left: 7%;
+            top: 0%;
+            left: 5%;
             align-self: center;
-            font-size: 400%;
+            font-size: 500%;
             transition: transform 0.5s ease;
           }
 
@@ -90,7 +115,6 @@ body, html {
 
         #info:hover {
             background-color: rgba(69, 114, 181, 1);
-            height: 70%;
            
         }
 
@@ -113,7 +137,7 @@ body, html {
 
 
   .accordion-container {
-    font-family: 'FT88', sans-serif;
+    
     display: flex; /* Arrange items horizontally */
     justify-content: space-between; /* Space between items */
     width: 100%; /* Container width */
@@ -121,6 +145,8 @@ body, html {
 }
 
 .accordion-item {
+    font-family: "Almendra", serif;
+    font-weight: 400;
     /* Border for items */
     border-radius: 5px; /* Rounded corners */
     overflow: hidden; /* Hide overflow content */
@@ -132,6 +158,8 @@ body, html {
 
 
 .accordion-header {
+    font-family: "Almendra", serif;
+    font-weight: 500;
     padding: 5px; /* Padding for header */
     cursor: pointer; /* Change cursor to pointer */
      /* Header background color */
@@ -156,7 +184,7 @@ body, html {
     display: block; /* Show content when active */
 }
 h2{
-    font-family: 'Crozet', sans-serif;
+    font-family: 'Fantome-Regular', Arial, sans-serif;
     display: block;
 }
 
@@ -167,7 +195,7 @@ h2{
 @media only screen and (max-width: 767px) {
 
     #rawr {
-        top: 2%;
+        
         width: 100%; /* Ensure it takes up the full width of the container */
     word-wrap: break-word; /* Ensure long words break to wrap */
     overflow-wrap: break-word; /* Additional rule to handle wrapping for long words */
@@ -181,7 +209,7 @@ h2{
         position: absolute;
        
         align-self: center;
-        font-size: 625%;
+        font-size: 825%;
         transition: transform 0.5s ease;
     }
 
@@ -193,12 +221,12 @@ h2{
     #info{
         z-index: 1000;
         position: absolute;
-        top: 40%;
-        left: 23%;
+        top: 35%;
+        left: 18%;
         padding: 2%;
         align-items: center;
-        width: 50%; /* Width of the rectangle */
-        height: 20%; 
+        width: 60%; /* Width of the rectangle */
+        height: 35%; 
         overflow: scroll;
        
         background-color: rgba(69, 114, 181, 0.8);
@@ -212,12 +240,7 @@ h2{
         transition: left 2s ease;/* Transition for smooth fade */
             }
 
-            #info:hover {
-                height: 60%;
-                width: 90%;
-                left: 3%;
-            top: 15%;
-            }
+           
 
             #info:hover h2 {
                 display: none;
@@ -228,7 +251,7 @@ h2{
                 cursor: pointer; /* Change cursor to pointer */
                  /* Header background color */
                 color: #E0B7EF; /* Header text color */
-                font-size: 15px; /* Header font size */
+                font-size: 25px; /* Header font size */
                 text-align: center; /* Center text */
             }
 

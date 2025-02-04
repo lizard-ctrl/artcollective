@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+       body {
+        background-image: url(tumblr_fe4eb26ca9756edbac68f7efef025fd5_86d4a7b6_1280.gif);
+        background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        @font-face {
+    font-family: 'Fantome-Regular';
+    src: url('fonts/Fantome-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+        h1{
+          color: #E0B7EF;
+          font-family: 'Fantome-Regular';
+          position: absolute;
+          top: -2%;
+          
+          font-size: 400%;
+        }
+
+        h2{
+          color: #E0B7EF;
+          font-family: 'Fantome-Regular';
+position: absolute;
+bottom: 2%;
+right: 2%;
+        }
+
+        h2:hover{
+          color: blue;
+        }
+       
+        .carousel {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(219, 59, 209, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        @media only screen and (max-width: 767px) {
+        h1{
+          color: #E0B7EF;
+          font-family: 'Fantome-Regular';
+          position: absolute;
+          top: -2%;
+          text-align: center;
+          font-size: 350%;
+        }
+
+        h2{
+          color: #E0B7EF;
+          font-family: 'Fantome-Regular';
+position: absolute;
+bottom: -4%;
+right: 3%;
+font-size: 200%;
+        }
+        .carousel {
+            position: absolute;
+            top: 25%;
+            width: 80%;
+            height: 70%;
+            overflow: hidden;
+        }
+      }
+       
+    </style>
+</head>
+<body>
+  <h1>SELECT WORKS</h1>
+  <a href="/index.html"><h2>BACK</h2></a>
+    <div class="carousel">
+        <button class="btn prev" onclick="prevImage()">&#10094;</button>
+        <img id="carousel-image" src="1.png" class="active">
+        <button class="btn next" onclick="nextImage()">&#10095;</button>
+    </div>
+    
+    <script>
+        let currentImage = 1;
+        const totalImages = 27;
+        const imageElement = document.getElementById("carousel-image");
+
+        function nextImage() {
+            currentImage = currentImage < totalImages ? currentImage + 1 : 1;
+            imageElement.src = `${currentImage}.png`;
+        }
+
+        function prevImage() {
+            currentImage = currentImage > 1 ? currentImage - 1 : totalImages;
+            imageElement.src = `${currentImage}.png`;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

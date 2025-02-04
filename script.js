@@ -13,9 +13,8 @@ function createWingding() {
   wingding.classList.add('wingding');
   
   // Randomly select a Wingdings character
-  const wingdings = ['✿', // Flower
-  '✽', // Flower
-  '❀', // Flower
+  const wingdings = [ // Flower
+   // Flower
   '✦', // Star
   '✧', // Star
   '★', // Filled Star
