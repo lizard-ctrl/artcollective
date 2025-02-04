@@ -109,20 +109,37 @@ font-size: 200%;
     </div>
     
     <script>
-        let currentImage = 1;
-        const totalImages = 27;
-        const imageElement = document.getElementById("carousel-image");
+      const totalImages = 43;
+      const imageElement = document.getElementById("carousel-image");
+      let currentIndex = 0;
 
-        function nextImage() {
-            currentImage = currentImage < totalImages ? currentImage + 1 : 1;
-            imageElement.src = `${currentImage}.png`;
-        }
+      // Generate an array of image paths
+      const images = Array.from({ length: totalImages }, (_, i) => `${i + 1}.png`);
 
-        function prevImage() {
-            currentImage = currentImage > 1 ? currentImage - 1 : totalImages;
-            imageElement.src = `${currentImage}.png`;
-        }
-    </script>
+      // Fisher–Yates shuffle algorithm
+      function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [array[i], array[j]] = [array[j], array[i]];
+          }
+      }
+
+      // Shuffle the images array
+      shuffleArray(images);
+
+      // Display the first image
+      imageElement.src = images[currentIndex];
+
+      function nextImage() {
+          currentIndex = (currentIndex + 1) % totalImages;
+          imageElement.src = images[currentIndex];
+      }
+
+      function prevImage() {
+          currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+          imageElement.src = images[currentIndex];
+      }
+  </script>
     <script src="script.js"></script>
 </body>
 </html>
