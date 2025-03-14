@@ -84,6 +84,59 @@ body, html {
   }
 
  
+  .marquee-container {
+    font-family: 'Fantome-Regular', Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 30px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-container1 {
+    font-family: 'Fantome-Regular', Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 30px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee1 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee1 30s linear infinite;
+}
+
+@keyframes marquee1 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
         
   .wingding {
@@ -101,14 +154,14 @@ body, html {
     gap: 100px; /* Space between divs */
     justify-content: center; /* Center them horizontally */
     flex-wrap: wrap; /* Allows stacking on smaller screens */
-    padding: 0 5vw;
+    padding: 12vh 5vw;
     overflow: scroll;
 }
 
 .poster {
     position: relative;
     width: 50%;
-    height: 75%;
+    height: 70%;
     
     padding: 20px;
     text-align: center;
@@ -128,12 +181,55 @@ body, html {
     background-repeat: no-repeat;
 }
 
+#postersMobile{
+    display: none;
+}
+
 @media only screen and (max-width: 767px) {
 
     .posters {
         padding-top: 100px;
         flex-direction: column; /* Stacks the divs */
         align-items: center; /* Center them when stacked */
+    }
+
+    .poster{
+        display: none;
+    }
+
+    #postersMobile{
+        display: block;
+        top: 10%;
+        z-index: 1000;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        
+        overflow: scroll;
+    }
+
+    #front2{
+        position: relative;
+        height: 80%;
+        width: 100%;
+        background-image: url(images/Screenshot\ 2025-03-14\ at\ 5.22.37\ PM.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #back2{
+        position: relative;
+        height: 80%;
+        width: 100%;
+        background-image: url(images/Untitled114_20250314162957.PNG);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #back2{
+        background-image: url(images/Untitled114_20250314162957.PNG);
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     #rawr {
