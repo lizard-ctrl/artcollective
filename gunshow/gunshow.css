@@ -1,6 +1,6 @@
 
 
-  @font-face {
+@font-face {
     font-family: 'Crozet';
     src: url('fonts/crozet_te/webfonts/Crozet-Regular.woff') format('woff'); /* Adjust the path if needed */
     font-weight: normal; /* Adjust if the font has different weights */
@@ -53,10 +53,21 @@ body, html {
     margin: 0;
     align-content: center;
     padding: 0;
-    overflow: hidden;
+    overflow: scroll;
     height: 100%;
-    
+   
     font-family: "Almendra", serif;
+  }
+
+  #rawr{
+    color: red;
+    font-size: 300%;
+    display: flex;
+     /* Space between divs */
+    justify-content: center; /* Center them horizontally */
+    /* Allows stacking on smaller screens */
+  
+  
   }
   
   #container {
@@ -66,138 +77,66 @@ body, html {
     width: 100%;
     height: 100vh;
     pointer-events: none;
-    background-image: url(giphy.gif);
+    background-image: url(images/200.gif);
     background-size: cover;
+    overflow: scroll;
      /* Change background color to your preference */
   }
 
-  #info{
-    z-index: 1000;
-    position: relative;
-    top: 0%;
-    left: 23%;
-    padding: 2%;
-    align-items: center;
-    width: 50%; /* Width of the rectangle */
-    height: 55%; 
-    overflow: scroll;
-   
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Height of the rectangle *//* Pink background */
-    box-shadow: 0px 0px 40px 40px white; /* Blurry pink shadow */
-    border-radius: 10px; 
-    transition: background-color 2s ease; 
-    transition: height 5s ease;
-    transition: top 2s ease;/* Transition for smooth fade */
-        }
-
-        h1{
-            font-family: 'Fantome-Regular', Arial, sans-serif;
-            color: red;
-            position: relative;
-            top: 0%;
-            left: 0%;
-            align-self: center;
-            font-size: 5vw; 
-            text-align: center;
-            transition: transform 0.5s ease;
-          }
-
-        #pretty{
-            position: relative;
-            color: red;
-            font-size: 200%;
-        }
-
-          #allInfo{
-            display: none;
-            transition: transform 0.5s ease;
-          }
-
-        #info:hover {
-            background-color: white;
-           
-        }
-
-        #info:hover h1{
-            transform: scale(0.8);
-        }
-
-        #info:hover #allInfo{
-            display: block;
-        }
+ 
 
         
-
   .wingding {
     position: absolute;
     font-family: "Wingdings", sans-serif;
-    color: red;
+    color: #E0B7EF;
     font-size: 60px; /* Adjust size if necessary */
   }
 
 
-  .accordion-container {
+  .posters {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    gap: 100px; /* Space between divs */
+    justify-content: center; /* Center them horizontally */
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    padding: 0 5vw;
+    overflow: scroll;
+}
+
+.poster {
+    position: relative;
+    width: 50%;
+    height: 75%;
     
-    display: flex; /* Arrange items horizontally */
-    justify-content: space-between; /* Space between items */
-    width: 100%; /* Container width */
-    flex-direction: column; /* Stack items vertically */
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Makes both divs take equal width */
+    min-width: 300px; /* Prevents excessive shrinking */
 }
 
-.accordion-item {
-    font-family: "Almendra", serif;
-    font-weight: 400;
-    /* Border for items */
-    border-radius: 5px; /* Rounded corners */
-    overflow: hidden; /* Hide overflow content */
-    /* Background color */
-    transition: box-shadow 0.3s ease; /* Transition for box shadow */
-    margin-bottom: 10px; /* Space between items */
+#front{
+    background-image: url(images/Screenshot\ 2025-03-14\ at\ 5.22.37\ PM.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-
-
-.accordion-header {
-    font-family: "Almendra", serif;
-    font-weight: 500;
-    padding: 5px; /* Padding for header */
-    cursor: pointer; /* Change cursor to pointer */
-     /* Header background color */
-    color: red; /* Header text color */
-    font-size: 18px; /* Header font size */
-    text-align: center; /* Center text */
-}
-
-.accordion-header:hover{
-    color: #1A4431;
-}
-
-.accordion-content {
-    display: none; /* Initially hidden */
-    padding: 15px; 
-   
-    color: white;/* Padding for content */
-    background-color: red; /* Content background color */
-}
-
-.active .accordion-content {
-    display: block; /* Show content when active */
-}
-h2{
-    font-family: 'Fantome-Regular', Arial, sans-serif;
-    display: block;
-}
-
-#rawr{
-    display: none;
+#back{
+    background-image: url(images/Untitled114_20250314162957.PNG);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 767px) {
 
+    .posters {
+        padding-top: 100px;
+        flex-direction: column; /* Stacks the divs */
+        align-items: center; /* Center them when stacked */
+    }
+
     #rawr {
-        position: absolute;
-        top: 0%;
         
         width: 100%; /* Ensure it takes up the full width of the container */
     word-wrap: break-word; /* Ensure long words break to wrap */
@@ -208,11 +147,11 @@ h2{
         z-index: 1;
         text-align: center;
         display: block;
-        color: red;
+        
         position: absolute;
        
         align-self: center;
-        font-size: 800%;
+        font-size: 200%;
         transition: transform 0.5s ease;
     }
 
@@ -232,9 +171,9 @@ h2{
         height: 35%; 
         overflow: scroll;
        
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(69, 114, 181, 0.8);
         /* Height of the rectangle *//* Pink background */
-        box-shadow: 0px 0px 40px 40px white; /* Blurry pink shadow */
+        box-shadow: 0px 0px 40px 40px rgba(69, 114, 181, 1); /* Blurry pink shadow */
         border-radius: 10px; 
         transition: background-color 0.5s ease; 
         transition: height 2s ease;
@@ -253,7 +192,7 @@ h2{
                 padding: 5px; /* Padding for header */
                 cursor: pointer; /* Change cursor to pointer */
                  /* Header background color */
-                color: red; /* Header text color */
+                color: #E0B7EF; /* Header text color */
                 font-size: 25px; /* Header font size */
                 text-align: center; /* Center text */
             }
