@@ -6,8 +6,8 @@
     <title>Image Carousel</title>
     <style>
        body {
-        background-image: url(tumblr_fe4eb26ca9756edbac68f7efef025fd5_86d4a7b6_1280.gif);
-        background-size: cover;
+        background-image: url(original_86a355e83a3db620d28d5f0b467c3364.gif);
+        background-size: contain;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +22,7 @@
     font-style: normal;
 }
         h1{
-          color: #E0B7EF;
+          color: red;
           font-family: 'Fantome-Regular';
           position: absolute;
           top: -2%;
@@ -31,7 +31,7 @@
         }
 
         h2{
-          color: #E0B7EF;
+          color: red;
           font-family: 'Fantome-Regular';
 position: absolute;
 bottom: 2%;
@@ -61,7 +61,7 @@ right: 2%;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(219, 59, 209, 0.5);
+            background-color: rgba(255, 0, 0);
             color: white;
             border: none;
             padding: 10px;
@@ -70,9 +70,35 @@ right: 2%;
         .prev { left: 10px; }
         .next { right: 10px; }
 
+        .marquee-container {
+    font-family: 'Fantome-Regular', Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 30px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
         @media only screen and (max-width: 767px) {
         h1{
-          color: #E0B7EF;
+          color: red;
           font-family: 'Fantome-Regular';
           position: absolute;
           top: -2%;
@@ -81,7 +107,7 @@ right: 2%;
         }
 
         h2{
-          color: #E0B7EF;
+          color: red;
           font-family: 'Fantome-Regular';
 position: absolute;
 bottom: -4%;
@@ -100,8 +126,11 @@ font-size: 200%;
     </style>
 </head>
 <body>
+  <div class="marquee-container">
+    <div class="marquee">WELCOME TO THE GUN SHOW MARCH TWENTY ONE ✧ WELCOME TO THE GUN SHOW MARCH TWENTY ONE ✧WELCOME TO THE GUN SHOW MARCH TWENTY ONE ✧WELCOME TO THE GUN SHOW MARCH TWENTY ONE ✧WELCOME TO THE GUN SHOW MARCH TWENTY ONE ✧</div>
+</div>
   <h1>SELECT WORKS</h1>
-  <a href="https://lizard-ctrl.github.io/artcollective/"><h2>BACK</h2></a>
+ 
     <div class="carousel">
         <button class="btn prev" onclick="prevImage()">&#10094;</button>
         <img id="carousel-image" src="1.png" class="active">
