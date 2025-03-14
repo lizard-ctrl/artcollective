@@ -200,7 +200,7 @@ body, html {
     #postersMobile{
         display: block;
         top: 10%;
-        align-content: center;
+        
         z-index: 1000;
         position: absolute;
         width: 100%;
