@@ -1,0 +1,297 @@
+
+
+@font-face {
+    font-family: 'Crozet';
+    src: url('fonts/crozet_te/webfonts/Crozet-Regular.woff') format('woff'); /* Adjust the path if needed */
+    font-weight: normal; /* Adjust if the font has different weights */
+    font-style: normal; /* Adjust if the font has different styles */
+}
+
+@font-face {
+    font-family: 'FT88';
+    src: url('fonts/crozet_te/FT88-Serif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.almendra-regular {
+    font-family: "Almendra", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .almendra-bold {
+    font-family: "Almendra", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .almendra-regular-italic {
+    font-family: "Almendra", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+a{
+    text-decoration: none;
+}
+
+
+
+.slay{
+    color: #1A4431;
+    font-family: 'FT88', sans-serif;
+    position: relative;
+}
+@font-face {
+    font-family: 'Fantome-Regular';
+    src: url('fonts/Fantome-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    align-content: center;
+    padding: 0;
+    overflow: scroll;
+    height: 100%;
+   
+    font-family: "Almendra", serif;
+  }
+
+  #rawr{
+    color: red;
+    font-size: 300%;
+    display: flex;
+     /* Space between divs */
+    justify-content: center; /* Center them horizontally */
+    /* Allows stacking on smaller screens */
+  
+  
+  }
+  
+  #container {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    background-image: url(images/utmjeB.gif);
+    background-size: cover;
+    overflow: scroll;
+     /* Change background color to your preference */
+  }
+
+ 
+  .marquee-container {
+    font-family: 'Fantome-Regular', Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: palevioletred;
+    color: white;
+    font-size: 30px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-container1 {
+    font-family: 'Fantome-Regular', Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: palevioletred;
+    color: white;
+    font-size: 30px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee1 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee1 30s linear infinite;
+}
+
+@keyframes marquee1 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+        
+  .wingding {
+    position: absolute;
+    font-family: "Wingdings", sans-serif;
+    color: #E0B7EF;
+    font-size: 60px; /* Adjust size if necessary */
+  }
+
+
+  .posters {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    gap: 100px; /* Space between divs */
+    justify-content: center; /* Center them horizontally */
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    padding: 12vh 5vw;
+    overflow: scroll;
+}
+
+.poster {
+    position: relative;
+    width: 50%;
+    height: 70%;
+    
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Makes both divs take equal width */
+    min-width: 300px; /* Prevents excessive shrinking */
+}
+
+#front{
+    background-image: url(images/Untitled157_20250519115715.PNG);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#back{
+    background-image: url(images/Untitled160_20250519115322.PNG);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#postersMobile{
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .posters {
+        padding-top: 100px;
+        flex-direction: column; /* Stacks the divs */
+        align-items: center; /* Center them when stacked */
+    }
+
+    .poster{
+        display: none;
+    }
+
+    #postersMobile{
+        display: block;
+        top: 10%;
+        
+        z-index: 1000;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        
+        overflow: scroll;
+    }
+
+    #front2{
+        position: relative;
+        height: 100%;
+        width: 80%;
+        background-image: url(images/Screenshot\ 2025-03-14\ at\ 5.22.37\ PM.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #back2{
+        position: relative;
+        height: 100%;
+        width: 80%;
+        background-image: url(images/Untitled114_20250314162957.PNG);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #back2{
+        background-image: url(images/Untitled114_20250314162957.PNG);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #rawr {
+        
+        width: 100%; /* Ensure it takes up the full width of the container */
+    word-wrap: break-word; /* Ensure long words break to wrap */
+    overflow-wrap: break-word; /* Additional rule to handle wrapping for long words */
+    word-break: break-word; /* Break long words */
+    white-space: normal; /* Prevent text from being on a single line */
+    text-align: center;
+        z-index: 1;
+        text-align: center;
+        display: block;
+        
+        position: absolute;
+       
+        align-self: center;
+        font-size: 200%;
+        transition: transform 0.5s ease;
+    }
+
+
+    h1{
+       display: none;
+    }
+
+    #info{
+        z-index: 1000;
+        position: absolute;
+        top: 35%;
+        left: 18%;
+        padding: 2%;
+        align-items: center;
+        width: 60%; /* Width of the rectangle */
+        height: 35%; 
+        overflow: scroll;
+       
+        background-color: rgba(69, 114, 181, 0.8);
+        /* Height of the rectangle *//* Pink background */
+        box-shadow: 0px 0px 40px 40px rgba(69, 114, 181, 1); /* Blurry pink shadow */
+        border-radius: 10px; 
+        transition: background-color 0.5s ease; 
+        transition: height 2s ease;
+        transition: top 2s ease;
+        transition: width 2s ease;
+        transition: left 2s ease;/* Transition for smooth fade */
+            }
+
+           
+
+            #info:hover h2 {
+                display: none;
+               
+            }
+            .accordion-header {
+                padding: 5px; /* Padding for header */
+                cursor: pointer; /* Change cursor to pointer */
+                 /* Header background color */
+                color: #E0B7EF; /* Header text color */
+                font-size: 25px; /* Header font size */
+                text-align: center; /* Center text */
+            }
+
+}

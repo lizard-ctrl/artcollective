@@ -94,7 +94,7 @@ body, html {
 
         h1{
             font-family: 'Fantome-Regular', Arial, sans-serif;
-            color: red;
+            color: palevioletred;
             position: relative;
             top: 0%;
             left: 0%;
@@ -106,7 +106,7 @@ body, html {
 
         #pretty{
             position: relative;
-            color: red;
+            color: palevioletred;
             font-size: 200%;
         }
 
@@ -133,7 +133,7 @@ body, html {
   .wingding {
     position: absolute;
     font-family: "Wingdings", sans-serif;
-    color: red;
+    color: palevioletred;
     font-size: 60px; /* Adjust size if necessary */
   }
 
@@ -165,7 +165,7 @@ body, html {
     padding: 5px; /* Padding for header */
     cursor: pointer; /* Change cursor to pointer */
      /* Header background color */
-    color: red; /* Header text color */
+    color: palevioletred; /* Header text color */
     font-size: 18px; /* Header font size */
     text-align: center; /* Center text */
 }
@@ -179,7 +179,7 @@ body, html {
     padding: 15px; 
    
     color: white;/* Padding for content */
-    background-color: red; /* Content background color */
+    background-color: palevioletred; /* Content background color */
 }
 
 .active .accordion-content {
@@ -199,7 +199,7 @@ h2{
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: black;
+    background: palevioletred;
     color: white;
     font-size: 30px;
     padding: 10px 0;
@@ -235,7 +235,7 @@ h2{
         z-index: 1;
         text-align: center;
         display: block;
-        color: red;
+        color: palevioletred;
        
        
         align-self: center;
@@ -280,7 +280,7 @@ h2{
                 padding: 5px; /* Padding for header */
                 cursor: pointer; /* Change cursor to pointer */
                  /* Header background color */
-                color: red; /* Header text color */
+                color: palevioletred; /* Header text color */
                 font-size: 25px; /* Header font size */
                 text-align: center; /* Center text */
             }
